@@ -1,0 +1,101 @@
+/* ===== Reset default spacing ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Global styling ===== */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 0 20px;
+}
+
+/* ===== Header with Flexbox ===== */
+header {
+  display: flex;                  /* Flexbox layout */
+  justify-content: space-between; /* Space between title and nav */
+  align-items: center;            /* Vertically center items */
+  background: #004080;
+  color: white;
+  padding: 15px 20px;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+.nav-list {
+  display: flex;          /* Flexbox again for nav links */
+  list-style: none;       /* Removes bullet points */
+  gap: 15px;              /* Space between links */
+}
+
+.nav-list a {
+  text-decoration: none;  /* Removes underline */
+  color: white;
+  font-weight: bold;
+}
+
+/* ===== Intro section ===== */
+.intro {
+  margin: 20px 0;
+  padding: 15px;
+  background: #e0e0ff;
+  border-radius: 8px;
+}
+
+/* ===== Product grid with CSS Grid ===== */
+.grid-container {
+  display: grid;                        /* Grid layout */
+  grid-template-columns: repeat(3, 1fr);/* 3 equal columns */
+  gap: 20px;                            /* Space between boxes */
+  margin-bottom: 20px;
+}
+
+.grid-item {
+  background: white;
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #004080;
+  color: white;
+  margin-top: 20px;
+}
+
+/* ===== Responsive design with media queries ===== */
+
+/* When screen width is less than 768px (tablet size) */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  }
+
+  header {
+    flex-direction: column; /* stack nav below title */
+    text-align: center;
+  }
+}
+
+/* When screen width is less than 500px (mobile size) */
+@media (max-width: 500px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Single column */
+  }
+
+  .nav-list {
+    flex-direction: column; /* stack links vertically */
+    gap: 10px;
+  }
+}
